@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --retro-pink: #ff00ff;
+  --retro-blue: #00ffff;
+  --retro-bg: #0a002e;
+  --retro-grid: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--retro-bg);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background-image: radial-gradient(circle at center, #120050 0%, #000010 100%);
+  overflow-x: hidden;
+}
+
+/* HEADER */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, var(--retro-pink), var(--retro-blue));
+  box-shadow: 0 0 20px var(--retro-blue);
+}
+
+.logo {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.logo span {
+  color: var(--retro-blue);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--retro-blue);
+  text-shadow: 0 0 8px var(--retro-blue);
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: repeating-linear-gradient(
+    to top,
+    var(--retro-grid) 0,
+    var(--retro-grid) 2px,
+    transparent 2px,
+    transparent 40px
+  );
+  transform: perspective(300px) rotateX(70deg);
+}
+
+.hero-text {
+  max-width: 500px;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: var(--retro-blue);
+}
+
+.hero-text span {
+  color: var(--retro-pink);
+}
+
+.hero-text p {
+  color: #d6d6ff;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: linear-gradient(90deg, var(--retro-pink), var(--retro-blue));
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+  box-shadow: 0 0 10px var(--retro-blue);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--retro-pink);
+}
+
+/* FOTO DENGAN ZOOM */
+.hero-img {
+  width: 300px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--retro-blue);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-img:hover {
+  transform: scale(1.15) rotate(3deg);
+  box-shadow: 0 0 30px var(--retro-pink), 0 0 60px var(--retro-blue);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+  background: linear-gradient(90deg, var(--retro-pink), var(--retro-blue));
+  box-shadow: 0 0 20px var(--retro-blue);
+}
+
+footer a {
+  color: yellow;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+  .hero-img {
+    width: 240px;
+  }
+}
+/* ============= PORTFOLIO PAGE ============= */
+.portfolio {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.retro-title {
+  font-family: "Press Start 2P", cursive;
+  color: var(--retro-blue);
+  font-size: 1rem;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px var(--retro-pink);
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.retro-table {
+  width: 90%;
+  margin: auto;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px var(--retro-pink);
+}
+
+.retro-table th, .retro-table td {
+  border: 1px solid var(--retro-blue);
+  padding: 10px;
+  text-align: center;
+}
+
+.retro-table th {
+  color: var(--retro-pink);
+  text-transform: uppercase;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.6rem;
+}
+
+.retro-table tr:hover {
+  background: rgba(0, 255, 255, 0.1);
+  transition: 0.3s;
+}
+
+/* ============= CONTACT FORM ============= */
+.contact {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.retro-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px var(--retro-blue);
+}
+
+.retro-form label {
+  text-align: left;
+  margin-top: 10px;
+  color: var(--retro-blue);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.retro-form input,
+.retro-form select,
+.retro-form textarea {
+  margin-top: 5px;
+  padding: 10px;
+  background: black;
+  border: 1px solid var(--retro-blue);
+  color: #00ffff;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.retro-form input:focus,
+.retro-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--retro-pink);
+}
+
+.checkbox-group {
+  margin: 15px 0;
+  text-align: left;
+  color: white;
+}
+
+.retro-form .btn {
+  align-self: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .retro-form {
+    width: 90%;
+  }
+  .retro-table {
+    font-size: 0.8rem;
+  }
+}
+/* ============= SKILLS SECTION ============= */
+.skills {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.skills-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.skill {
+  text-align: left;
+  margin: 15px 0;
+  color: white;
+}
+
+.skill span {
+  font-weight: bold;
+  color: var(--retro-blue);
+}
+
+.progress-bar {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--retro-blue);
+  border-radius: 8px;
+  height: 15px;
+  margin-top: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px var(--retro-pink);
+}
+
+.progress {
+  background: linear-gradient(90deg, var(--retro-pink), var(--retro-blue));
+  height: 100%;
+  box-shadow: 0 0 15px var(--retro-blue);
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { filter: drop-shadow(0 0 5px var(--retro-pink)); }
+  to { filter: drop-shadow(0 0 15px var(--retro-blue)); }
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    width: 90%;
+  }
+}
